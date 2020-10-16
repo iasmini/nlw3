@@ -1,7 +1,6 @@
 .idea
 /web/node_modules/
 
-
 # Logs
 logs
 *.log
@@ -73,7 +72,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+web/.env
 .env.test
 
 # parcel-bundler cache (https://parceljs.org/)

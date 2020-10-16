@@ -31,9 +31,16 @@ function OrphanagesMap() {
         zoom={13}
         style={{ width: '100%', height: '100%' }}
       >
-        {/* servidor de onde serao baixadas as imagens do mapa */}
+        {/* TileLayer: servidor de onde serao baixadas as imagens do mapa */}
         {/* {z}: zoom, {x}: coordenada x, {y}: coordenada y */}
-        <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        {/* opcao 1: TileLayer do leaflet */}
+        {/*<TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />*/}
+
+        {/* opcao 2: TileLayer do mapbox */}
+        {/* estilos de mapas: https://docs.mapbox.com/mapbox-gl-js/example/setstyle/ */}
+        <TileLayer
+          url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
+        />
       </Map>
       
       <Link to="" className="create-orphanage">
