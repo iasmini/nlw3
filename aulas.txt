@@ -24,5 +24,11 @@ yarn dev
 
 instalando o banco de dados e dependencia para usar com o node
 yarn add typeorm sqlite3
-
-
+por padrao o typeorm executa com typescript. para mudar para o node (package.json)
+  "scripts": {
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+  },
+criando migrations
+yarn typeorm migration:create -n create_orphanages
+executar a migration
+yarn typeorm migration:run
