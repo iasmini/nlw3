@@ -1,0 +1,25 @@
+aula 1
+criar novo projeto react com typescript
+yarn create react-app web --template typescript
+
+aula 2
+backend
+cria a pasta do back
+yarn init -y
+yarn add express
+criar pasta src
+criar arquivo server.ts
+yarn add typescript -D
+yarn tsc --init (cria tsconfig.json file)
+entra nesse arquivo e troca es5 para es2017 (ecma script)
+yarn add ts-node-dev -D (para executar o projeto usando typescript e node)
+incluir no package.json:
+  "scripts": {
+    "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts"
+  },
+yarn dev
+
+--transpile-only: converte o codigo, mas ignora erros no codigo pq a ide já trata isso
+--ignore-watch node_modules: o ts-node-dev nao fica observando alteracoes que acontecem no node_modules
+
+
