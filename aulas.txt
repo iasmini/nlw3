@@ -22,4 +22,7 @@ yarn dev
 --transpile-only: converte o codigo, mas ignora erros no codigo pq a ide já trata isso
 --ignore-watch node_modules: o ts-node-dev nao fica observando alteracoes que acontecem no node_modules
 
+instalando o banco de dados e dependencia para usar com o node
+yarn add typeorm sqlite3
+
 
