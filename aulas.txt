@@ -1,8 +1,10 @@
 aula 1
+=========================================================
 criar novo projeto react com typescript
 yarn create react-app web --template typescript
 
 aula 2
+=========================================================
 backend
 cria a pasta do back
 yarn init -y
@@ -45,3 +47,9 @@ yarn add multer
 
 pacote para tratamento de erro na api
 yarn add express-async-errors
+
+pacote para validacao de dados
+yarn add yup
+
+tem que fazer * as pq o yup nao tem o export
+import * as Yup from 'yup';
