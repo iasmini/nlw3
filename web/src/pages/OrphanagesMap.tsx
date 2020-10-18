@@ -1,24 +1,13 @@
-import Leaflet from 'leaflet';
 import React from "react";
 import { Link } from "react-router-dom";
 import { FiPlus, FiArrowRight } from "react-icons/fi";
 //yarn add @types/react-leaflet -D
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 
-import 'leaflet/dist/leaflet.css'
-
+import mapIcon from "../utils/mapIcon";
 import mapMarkerImg from '../images/map-marker.svg';
-import '../styles/pages/orphanages-map.css'
 
-const mapIcon = Leaflet.icon({
-  iconUrl: mapMarkerImg,
-  iconSize: [30, 40],
-  // indica qual posicao do icone deve ser considerado o ponto no mapa (se nao coloca isso, considera o centro
-  // do icone como o ponto no mapa e deve ser a ponta da seta do icone)
-  // 15 eixo x (metade do x do iconsize) e 40 eixo y (ponto mais baixo do iconsize)
-  iconAnchor: [15, 40],
-  popupAnchor: [150, 2]
-})
+import '../styles/pages/orphanages-map.css'
 
 function OrphanagesMap() {
   return (

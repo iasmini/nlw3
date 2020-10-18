@@ -55,3 +55,7 @@ tem que fazer * as pq o yup nao tem o export
 import * as Yup from 'yup';
 
 yarn add cors
+
+aula 3
+=========================================================
+tsx é quando tem html dentro de javascript
