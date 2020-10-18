@@ -53,3 +53,5 @@ yarn add yup
 
 tem que fazer * as pq o yup nao tem o export
 import * as Yup from 'yup';
+
+yarn add cors
