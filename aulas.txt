@@ -39,3 +39,6 @@ yarn typeorm migration:revert
 Colocar como false no tsconfig.json para nao obrigar a inicializar valores nas classes
 Não obriga a ter construtor na classe
 "strictPropertyInitialization": false
+
+pacote para lidar com imagens
+yarn add multer
