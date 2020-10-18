@@ -42,3 +42,6 @@ Não obriga a ter construtor na classe
 
 pacote para lidar com imagens
 yarn add multer
+
+pacote para tratamento de erro na api
+yarn add express-async-errors
