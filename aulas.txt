@@ -32,3 +32,10 @@ criando migrations
 yarn typeorm migration:create -n create_orphanages
 executar a migration
 yarn typeorm migration:run
+
+para reverter as alterações da migration
+yarn typeorm migration:revert
+
+Colocar como false no tsconfig.json para nao obrigar a inicializar valores nas classes
+Não obriga a ter construtor na classe
+"strictPropertyInitialization": false
