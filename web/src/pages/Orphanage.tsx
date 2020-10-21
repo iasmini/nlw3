@@ -11,17 +11,17 @@ import Sidebar from "../components/Sidebar";
 import '../styles/pages/orphanage.css';
 
 interface Orphanage {
-  latitude: number,
-  longitude: number,
-  name: string,
+  latitude: number;
+  longitude: number;
+  name: string;
   about: string;
   instructions: string;
   opening_hours: string;
-  open_on_weekends: boolean,
+  open_on_weekends: boolean;
   images: Array<{
-    id: number,
+    id: number;
     url: string
-  }>
+  }>;
 }
 
 interface OrphanageParams {
@@ -41,7 +41,7 @@ export default function Orphanage() {
   }, [params.id])
 
   if (!orphanage){
-    return <p>Carregando...</p>
+    return <p>Carregando...</p>;
   }
   return (
     <div id="page-orphanage">
@@ -49,8 +49,10 @@ export default function Orphanage() {
       
       <main>
         <div className="orphanage-details">
-          <img src={orphanage.images[activeImageIndex].url} alt={orphanage.name} />
-
+          { orphanage.images.length > 0 && (
+            <img src={orphanage.images[activeImageIndex].url} alt={orphanage.name} />
+          )}
+  
           <div className="images">
             {orphanage.images.map((image, index) => {
               return (
@@ -109,20 +111,17 @@ export default function Orphanage() {
               {orphanage.open_on_weekends ? (
                 <div className="open-on-weekends">
                   <FiInfo size={32} color="#39CC83" />
-                  Atendemos <br />
-                  fim de semana
+                  Atendemos aos <br />
+                  fins de semana
                 </div>
               ) : (
                 <div className="open-on-weekends dont-open-on-weekends">
                   <FiInfo size={32} color="#FF669D" />
-                  Não atendemos <br />
-                  fim de semana
+                  Não atendemos aos <br />
+                  fins de semana
                 </div>
                 
-              )
-              }
-              
-              
+              )}
             </div>
 
             <button type="button" className="contact-button">

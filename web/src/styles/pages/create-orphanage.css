@@ -89,6 +89,7 @@ form.create-orphanage-form .input-block textarea {
 
 form.create-orphanage-form .input-block .images-container {
   display: grid;
+  /* repete 5x o grid das fotos */
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 16px;
 }

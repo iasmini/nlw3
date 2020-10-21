@@ -41,6 +41,7 @@ export default function CreateOrphanage() {
     setImages(selectedImages);
     
     const selectedImagesPreview = selectedImages.map(image => {
+      // createObjectURL: cria uma url a partir de um blob
       return URL.createObjectURL(image);
     });
     
@@ -48,6 +49,8 @@ export default function CreateOrphanage() {
   }
   
   async function handleSubmit(event: FormEvent){
+    // quando dá submit o padrão é redirecionar para outra tela
+    // esse evento desabilita o funcionamento padrao do formulario
     event.preventDefault();
     
     const {latitude, longitude} = position;
@@ -65,7 +68,7 @@ export default function CreateOrphanage() {
       data.append('images', image);
     })
     
-    await api.post('orpanages', data)
+    await api.post('orphanages', data)
     
     alert('Cadastro realizado com sucesso!');
     
@@ -82,7 +85,7 @@ export default function CreateOrphanage() {
             <legend>Dados</legend>
 
             <Map 
-              center={[-27.2092052,-49.6401092]} 
+              center={[-19.9206816,-43.927388]}
               style={{ width: '100%', height: 280 }}
               zoom={15}
               onClick={handleMapClick}
@@ -97,12 +100,12 @@ export default function CreateOrphanage() {
 
             <div className="input-block">
               <label htmlFor="name">Nome</label>
-              <input id="name" value={name} onChange={event => setName(event.target.value)}/>
+              <input id="name" value={name} onChange={event => setName(event.target.value)} />
             </div>
 
             <div className="input-block">
               <label htmlFor="about">Sobre <span>Máximo de 300 caracteres</span></label>
-              <textarea id="name" maxLength={300} value={about} onChange={event => setAbout(event.target.value)}/>
+              <textarea id="about" maxLength={300} value={about} onChange={event => setAbout(event.target.value)} />
             </div>
 
             <div className="input-block">
@@ -111,7 +114,7 @@ export default function CreateOrphanage() {
               <div className="images-container">
                 {previewImages.map(image => {
                   return (
-                    <img key={image} src={image} alt={name}/>
+                    <img key={image} src={image} alt={name} />
                   )
                 })}
                 
@@ -128,12 +131,12 @@ export default function CreateOrphanage() {
 
             <div className="input-block">
               <label htmlFor="instructions">Instruções</label>
-              <textarea id="instructions" value={instructions} onChange={event => setInstructions(event.target.value)}/>
+              <textarea id="instructions" value={instructions} onChange={event => setInstructions(event.target.value)} />
             </div>
 
             <div className="input-block">
               <label htmlFor="opening_hours">Horário de funcionamento</label>
-              <input id="opening_hours" value={opening_hours} onChange={event => setOpeningHours(event.target.value)}/>
+              <input id="opening_hours" value={opening_hours} onChange={event => setOpeningHours(event.target.value)} />
             </div>
 
             <div className="input-block">
@@ -143,13 +146,12 @@ export default function CreateOrphanage() {
                 <button type="button"
                         className={open_on_weekends ? 'active' : ''}
                         onClick={() => setOpenOnWeekends(true)}
-                >
-                  Sim</button>
+                >Sim
+                </button>
                 <button type="button"
                         className={!open_on_weekends ? 'active' : ''}
                         onClick={() => setOpenOnWeekends(false)}
-                >
-                  Não
+                >Não
                 </button>
               </div>
             </div>
